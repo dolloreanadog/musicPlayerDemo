@@ -1,0 +1,72 @@
+<!-- What kind of document it is-->
+<!DOCTYPE html>
+<!-- Set the language-->
+<html lang="en">
+    <!-- Metadata for document-->
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Music Player</title>
+        <style>
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 80vh;
+                background-image: url("background.png");
+            }
+
+            /* Player1 container's style*/
+            #player1{
+                background-color: rgba(0, 0, 0, 0.432);
+                padding: 20px;
+                border-radius: 10px;
+            }
+
+            /*Audio controls (buttons) styling*/
+            button {
+                margin: 5px;
+                padding: 10px 15px;
+                border: none;
+                border-radius: 5px;
+                background-color: white;
+                color: grey;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <!-- Show content for page-->
+    <body>
+        <!-- Some contextualizing text-->
+        <h1>Some really good music!</h1><br>
+        <p>Trust, it's a very nice!</p>
+        <!-- div to store music player-->
+        <div id="player1">
+            <!-- get audio for music player-->
+            <audio id="audio1" src="Moomimurr_Fantasmagorik.mp3"></audio>
+            <!-- buttons that either play, pause, or stop audio-->
+            <label style="color: white;">Moomimurr - Fantasmagorik</label><br><br>
+            <button onclick="playAudio()">Play</button>
+            <button onclick="pauseAudio()">Pause</button><br><br>
+            <button onclick="stopAudio()">Stop</button>
+        </div>
+
+        <!-- Javascript -->
+        <script>
+            var audio = document.getElementById("audio1");
+
+            function playAudio(){
+                audio.play();
+            }
+
+            function pauseAudio(){
+                audio.pause();
+            }
+
+            function stopAudio(){
+                audio.pause();
+                audio.currentTime = 0;
+            }
+        </script>
+    </body>
+</html>
